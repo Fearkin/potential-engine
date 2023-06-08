@@ -37,15 +37,15 @@ async def start(message: Message, dialog_manager: DialogManager):
 
 @dp.message_handler(content_types=ContentType.TEXT)
 async def echo_name(message: Message):
-    message.answer(message.chat.id)
+    await message.answer(message.chat.id)
 
-
+'''
 @dp.message_handler(filters.RegexpCommandsFilter(
         regexp_commands=[r"(\d+) (\w+)( \w+)?"]
 ))
 async def add_record(message: Message):
     message.answer("test record")
-
+'''
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
